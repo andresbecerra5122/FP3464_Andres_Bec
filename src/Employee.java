@@ -1,3 +1,5 @@
+import java.time.Year;
+
 public abstract class Employee {
 
     private String Name;
@@ -9,20 +11,23 @@ public abstract class Employee {
 
     private Vehicle vehicle;
 
+    private Contract contract;
+
     public  abstract double annualincome();
 
 
-    public Employee(String name, int birthYear, double annualIncome, int ocupationRate) {
+    public Employee(String name, int birthYear, int ocupationRate) {
         this.Name = name;
         this.BirthYear = birthYear;
-        this.MontlyIncome = annualIncome;
         this.OcupationRate = ocupationRate;
+        this.MontlyIncome = 100;
+
     }
 
-    public Employee(String name, int birthYear, double annualIncome, int ocupationRate, Vehicle vehicle) {
+    public Employee(String name, int birthYear, int ocupationRate, Vehicle vehicle) {
         this.Name = name;
         this.BirthYear = birthYear;
-        this.MontlyIncome = annualIncome;
+        this.MontlyIncome = 1000;
         this.OcupationRate = ocupationRate;
         this.vehicle = vehicle;
     }
@@ -49,5 +54,35 @@ public abstract class Employee {
 
     public void setOcupationRate(int ocupationRate) {
         OcupationRate = ocupationRate;
+    }
+
+    public int getAge(){
+        return Year.now().getValue() - getBirthYear();
+    }
+    public void signContract(Contract p1){
+        this.setContract(p1);
+    }
+
+
+    public abstract String contractInfo();
+
+
+
+
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public Contract getContract() {
+        return contract;
+    }
+
+    public void setContract(Contract contract) {
+        this.contract = contract;
     }
 }

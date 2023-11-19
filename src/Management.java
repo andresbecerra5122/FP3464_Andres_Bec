@@ -59,20 +59,20 @@ public class Management {
         Employee Matt = new Programmer("Matt", 1981, 5, 110, vt4);
         Employee Sarah = new Programmer("Sarah", 1986, 3, vt3);
 
-//        // Permanent: nbChildren, married, monthlySalary, bonusPerChildPerMonth, accumulatedDays
-//        // Temporary: hourlySalary, accumulatedHours
-//        Contract p1 = new Permanent(2, true, 6000, 200, 17);
-//        Contract p2 = new Permanent(3, false, 5000, 150, 19);
-//        Contract t1 = new Temporary(60, 30);
-//        Contract t2 = new Temporary(50, 60);
-//        Contract p3 = new Permanent(1, true, 4000, 100, 20);
-//        Contract p4 = new Permanent(4, true, 4500, 100, 19);
-//        Serge.signContract(p1);
-//        Cindy.signContract(p2);
-//        Paul.signContract(t1);
-//        Matt.signContract(t2);
-//        Pierre.signContract(p3);
-//        Sarah.signContract(p4);
+        // Permanent: nbChildren, married, monthlySalary, bonusPerChildPerMonth, accumulatedDays
+        // Temporary: hourlySalary, accumulatedHours
+        Contract p1 = new Permanent(2, true, 6000, 200, 17);
+        Contract p2 = new Permanent(3, false, 5000, 150, 19);
+        Contract t1 = new Temporary(60, 30);
+        Contract t2 = new Temporary(50, 60);
+        Contract p3 = new Permanent(1, true, 4000, 100, 20);
+        Contract p4 = new Permanent(4, true, 4500, 100, 19);
+        Serge.signContract(p1);
+        Cindy.signContract(p2);
+        Paul.signContract(t1);
+        Matt.signContract(t2);
+        Pierre.signContract(p3);
+        Sarah.signContract(p4);
 
         employees.add(Serge);
         employees.add(Cindy);
@@ -91,19 +91,19 @@ public class Management {
         System.out.println("Contracts: ");
         System.out.println("-------------------------");
         for (Employee employee : employees) {
- //           System.out.print(employee.contractInfo());
+            System.out.print(employee.contractInfo());
         }
         System.out.println("-------------------------");
 
         // updating Matt's contract
- //       Contract p5 = new Permanent(1, true, 5000, 200, 30);
- //       Matt.signContract(p5);
+        Contract p5 = new Permanent(1, true, 5000, 200, 30);
+        Matt.signContract(p5);
 
         System.out.println("-------------------------");
         System.out.println("Contracts: ");
         System.out.println("-------------------------");
         for (Employee employee : employees) {
- //           System.out.print(employee.contractInfo());
+            System.out.print(employee.contractInfo());
         }
         System.out.println("-------------------------");
 

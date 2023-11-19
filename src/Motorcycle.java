@@ -14,4 +14,11 @@ public class Motorcycle extends  Vehicle{
     public void setSideCar(Boolean sideCar) {
         SideCar = sideCar;
     }
+
+
+    public String toString(){
+        String Total = super.toString();
+        Total = Total + "   -SideCar: "+ this.getSideCar() + "\n";
+        return  Total;
+    }
 }

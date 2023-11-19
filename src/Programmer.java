@@ -5,21 +5,29 @@ public class Programmer extends Employee
     private double GAIN_FACTOR_PROJECTS = 200;
 
 
-
-    public Programmer(String name, int birthYear, int monthlyIncome) {
-        super(name,birthYear,monthlyIncome,100);
+    //Programmer: name, birthYear, nbProjects, rate
+    public Programmer(String name, int birthYear, int noProjects) {
+        super(name,birthYear,100);
+        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
+        this.noProjects = noProjects;
     }
 
-    public Programmer(String name, int birthYear, int monthlyIncome, int occupationRate, Vehicle vehicle) {
-        super(name,birthYear,monthlyIncome,occupationRate,vehicle);
+    public Programmer(String name, int birthYear, int noProjects, int occupationRate, Vehicle vehicle) {
+        super(name,birthYear,occupationRate,vehicle);
+        this.noProjects = noProjects;
+        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
     }
 
-    public Programmer(String name, int birthYear, int monthlyIncome, int occupationRate) {
-        super(name,birthYear,monthlyIncome,occupationRate);
+    public Programmer(String name, int birthYear, int noProjects, int occupationRate) {
+        super(name,birthYear,occupationRate);
+        this.noProjects = noProjects;
+        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmers.");
     }
 
-    public Programmer(String name, int birthYear, int monthlyIncome, Vehicle vehicle) {
-        super(name,birthYear,monthlyIncome,100,vehicle);
+    public Programmer(String name, int birthYear, int noProjects, Vehicle vehicle) {
+        super(name,birthYear,100,vehicle);
+        this.noProjects = noProjects;
+        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
     }
 
     public int getNoProjects() {
@@ -35,5 +43,35 @@ public class Programmer extends Employee
         double base = getMontlyIncome() * 12;
         double extra = GAIN_FACTOR_PROJECTS *  getNoProjects();
         return extra + base ;
+    }
+
+    @Override
+    public void signContract(Contract p1) {
+     this.setContract(p1);
+    }
+
+    @Override
+    public String contractInfo() {
+        return this.getName() + " is a Programmer " + getContract().GetContractinfo();
+    }
+
+    public String toString(){
+
+        String Total = "Name: " + this.getName()+ ", a Programmer \n" +
+                "Age: " + this.getAge() + "\n";
+
+        Vehicle vehicle = this.getVehicle();
+        if(vehicle != null)
+        {
+            Total = Total + vehicle.toString();
+        }
+        Total = Total + GetProgrammerInfo();
+        return Total;
+    }
+
+    private String GetProgrammerInfo() {
+        return this.getName() + " has an Occupation rate:" + this.getOcupationRate()
+                + "% and completed " + this.getNoProjects() + " projects. \n "
+                + "His/Her estimated annual income is " + this.annualincome();
     }
 }
