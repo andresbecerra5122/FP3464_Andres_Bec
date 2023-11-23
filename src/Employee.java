@@ -22,14 +22,21 @@ public abstract class Employee {
         this.OccupationRate = 100;
         this.MontlyIncome = 100;
         this.age = 2023 - birthYear;
-
     }
 
-    public Employee(String name, int birthYear, int occupationRate, Vehicle vehicle) {
+    public Employee(String name, int birthYear, int occupationRate) {
         this(name, birthYear);
-        if(OccupationRate < 10){
+        if(occupationRate < 10){
             this.OccupationRate = 10;
-        } else this.OccupationRate = Math.min(OccupationRate, 100);
+        } else this.OccupationRate = Math.min(occupationRate, 100);
+    }
+    public Employee(String name, int birthYear, Vehicle vehicle){
+        this(name, birthYear);
+        this.vehicle = vehicle;
+    }
+    public Employee(String name, int birthYear, int occupationRate, Vehicle vehicle){
+        this(name, birthYear, occupationRate);
+        this.vehicle = vehicle;
     }
 
     public String getName() {
