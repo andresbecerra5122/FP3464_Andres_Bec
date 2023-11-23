@@ -71,7 +71,7 @@ public class Manager extends Employee
     }
 
     private String GetManagerInfo() {
-        return this.getName() + " has an Occupation rate:" + this.getOcupationRate()
+        return this.getName() + " has an Occupation rate:" + this.getOccupationRate()
                 + "% he/she travelled " + this.getTravelledDays() + " days and has brought "
                 + this.getNewClients() + " new clients. \n " +
                 "His/Her estimated annual income is " + this.annualincome();
