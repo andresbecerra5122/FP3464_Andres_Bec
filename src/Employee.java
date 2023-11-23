@@ -2,7 +2,7 @@ import java.time.Year;
 
 public abstract class Employee {
 //test
-    private String Name;
+    private final String Name;
     private int BirthYear;
 
     private double MontlyIncome;
@@ -55,8 +55,19 @@ public abstract class Employee {
         MontlyIncome = montlyIncome;
     }
 
+    public void setBirthYear(int birthYear) {
+        BirthYear = birthYear;
+        this.age = 2023 - birthYear;
+    }
+
+
     public int getOccupationRate() {
         return OccupationRate;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+        this.BirthYear = 2023 - age;
     }
 
     public void setOccupationRate(int occupationRate) {
