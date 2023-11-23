@@ -4,9 +4,9 @@ public class Manager extends Employee
 
     private int newClients;
 
-    private double GAIN_FACTOR_CLIENT = 500;
+    private final double GAIN_FACTOR_CLIENT = 500;
 
-    private double GAIN_FACTOR_TRAVEL = 100;
+    private final double GAIN_FACTOR_TRAVEL = 100;
 
 
     public Manager(String name, int birthYear, int newClients, int travelledDays ) {

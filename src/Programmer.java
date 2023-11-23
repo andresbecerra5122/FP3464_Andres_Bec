@@ -7,28 +7,53 @@ public class Programmer extends Employee
 
     //Programmer: name, birthYear, nbProjects, rate
     public Programmer(String name, int birthYear, int noProjects) {
-        super(name,birthYear,100);
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
-        this.noProjects = noProjects;
-    }
-
-    public Programmer(String name, int birthYear, int noProjects, int occupationRate, Vehicle vehicle) {
-        super(name,birthYear,occupationRate,vehicle);
-        this.noProjects = noProjects;
+        super(name,birthYear);
+        if(IsValidateInputs(noProjects)){
+            this.noProjects = noProjects;
+        }else {
+            throw new IllegalArgumentException("invalid input for number of projects");
+        }
         System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
     }
 
     public Programmer(String name, int birthYear, int noProjects, int occupationRate) {
         super(name,birthYear,occupationRate);
-        this.noProjects = noProjects;
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmers.");
+        if(IsValidateInputs(noProjects)){
+            this.noProjects = noProjects;
+        }else {
+            throw new IllegalArgumentException("invalid input for number of projects");
+        }
+        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
     }
 
     public Programmer(String name, int birthYear, int noProjects, Vehicle vehicle) {
-        super(name,birthYear,100,vehicle);
-        this.noProjects = noProjects;
+        super(name, birthYear, vehicle);
+        if(IsValidateInputs(noProjects)){
+            this.noProjects = noProjects;
+        }else {
+            throw new IllegalArgumentException("invalid input for number of projects");
+        }
         System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
     }
+
+    public Programmer(String name, int birthYear, int noProjects, int occupationRate, Vehicle vehicle) {
+        super(name, birthYear, occupationRate, vehicle);
+        if(IsValidateInputs(noProjects)){
+            this.noProjects = noProjects;
+        }else {
+            throw new IllegalArgumentException("invalid input for number of projects");
+        }
+        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
+    }
+
+    private boolean IsValidateInputs(int noProjects) {
+        return noProjects >= 0;
+    }
+
+    public double getGAIN_FACTOR_PROJECTS() {
+        return GAIN_FACTOR_PROJECTS;
+    }
+
 
     public int getNoProjects() {
         return noProjects;
