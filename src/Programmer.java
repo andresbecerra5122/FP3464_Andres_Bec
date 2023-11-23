@@ -70,7 +70,7 @@ public class Programmer extends Employee
     }
 
     private String GetProgrammerInfo() {
-        return this.getName() + " has an Occupation rate:" + this.getOcupationRate()
+        return this.getName() + " has an Occupation rate:" + this.getOccupationRate()
                 + "% and completed " + this.getNoProjects() + " projects. \n "
                 + "His/Her estimated annual income is " + this.annualincome();
     }

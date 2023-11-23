@@ -7,7 +7,7 @@ public abstract class Employee {
 
     private double MontlyIncome;
 
-    private int OcupationRate;
+    private int OccupationRate;
 
     private Vehicle vehicle;
 
@@ -16,19 +16,19 @@ public abstract class Employee {
     public  abstract double annualincome();
 
 
-    public Employee(String name, int birthYear, int ocupationRate) {
+    public Employee(String name, int birthYear, int occupationRate) {
         this.Name = name;
         this.BirthYear = birthYear;
-        this.OcupationRate = ocupationRate;
+        this.OccupationRate = occupationRate;
         this.MontlyIncome = 100;
 
     }
 
-    public Employee(String name, int birthYear, int ocupationRate, Vehicle vehicle) {
+    public Employee(String name, int birthYear, int occupationRate, Vehicle vehicle) {
         this.Name = name;
         this.BirthYear = birthYear;
         this.MontlyIncome = 1000;
-        this.OcupationRate = ocupationRate;
+        this.OccupationRate = occupationRate;
         this.vehicle = vehicle;
     }
 
@@ -48,12 +48,12 @@ public abstract class Employee {
         MontlyIncome = montlyIncome;
     }
 
-    public int getOcupationRate() {
-        return OcupationRate;
+    public int getOccupationRate() {
+        return OccupationRate;
     }
 
-    public void setOcupationRate(int ocupationRate) {
-        OcupationRate = ocupationRate;
+    public void setOccupationRate(int occupationRate) {
+        OccupationRate = occupationRate;
     }
 
     public int getAge(){

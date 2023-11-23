@@ -58,7 +58,7 @@ public class Tester extends Employee
     }
 
     private String GetTesterInfo() {
-        return this.getName() + " has an Occupation rate:" + this.getOcupationRate()
+        return this.getName() + " has an Occupation rate:" + this.getOccupationRate()
                 + "% and corrected " + this.getNoBugs() + " Bugs. \n "
                 + "His/Her estimated annual income is " + this.annualincome();
     }
