@@ -2,7 +2,7 @@ import java.time.Year;
 
 public abstract class Employee {
 
-    private String Name;
+    private final String Name;
     private int BirthYear;
 
     private double MontlyIncome;
