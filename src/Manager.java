@@ -9,23 +9,52 @@ public class Manager extends Employee
     private double GAIN_FACTOR_TRAVEL = 100;
 
 
-    public Manager(String name, int birthYear, int newClients, int travelledDays,
-                   int occupationRate ) {
-        super(name, birthYear,occupationRate);
-        this.travelledDays = travelledDays;
-        this.newClients = newClients;
+    public Manager(String name, int birthYear, int newClients, int travelledDays ) {
+        super(name, birthYear);
+        if(IsValidateInputs(travelledDays, newClients)){
+            this.travelledDays = travelledDays;
+            this.newClients = newClients;
+        }else {
+            throw new IllegalArgumentException("invalid input for travel days or client number");
+        }
+        System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
+    }
+
+    public Manager(String name, int birthYear, int newClients, int travelledDays, int occupationRate){
+        super(name, birthYear, occupationRate);
+        if(IsValidateInputs(travelledDays, newClients)){
+            this.travelledDays = travelledDays;
+            this.newClients = newClients;
+        }else {
+            throw new IllegalArgumentException("invalid input for travel days or client number");
+        }
         System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
     }
 
     // Manager: name, birthYear, nbClients, nbTravelDays, rate
 
     public Manager(String name, int birthYear, int newClients, int travelledDays, Vehicle vehicle) {
-        super(name, birthYear, 10,vehicle);
-        this.travelledDays = travelledDays;
-        this.newClients = newClients;
+        super(name, birthYear, vehicle);
+        if(IsValidateInputs(travelledDays, newClients)){
+            this.travelledDays = travelledDays;
+            this.newClients = newClients;
+        }else {
+            throw new IllegalArgumentException("invalid input for travel days or client number");
+        }
         System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
-
-
+    }
+    public Manager(String name, int birthYear, int newClients, int travelledDays, int occupationRate, Vehicle vehicle){
+        super(name, birthYear, occupationRate, vehicle);
+        if(IsValidateInputs(travelledDays, newClients)){
+            this.travelledDays = travelledDays;
+            this.newClients = newClients;
+        }else {
+            throw new IllegalArgumentException("invalid input for travel days or client number");
+        }
+        System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
+    }
+    private boolean IsValidateInputs(int travelledDays, int newClients) {
+        return travelledDays >= 0 && newClients >= 0;
     }
     public int getTravelledDays() {
         return travelledDays;
@@ -41,6 +70,14 @@ public class Manager extends Employee
 
     public void setNewClients(int newClients) {
         this.newClients = newClients;
+    }
+
+    public double getGAIN_FACTOR_CLIENT() {
+        return GAIN_FACTOR_CLIENT;
+    }
+
+    public double getGAIN_FACTOR_TRAVEL() {
+        return GAIN_FACTOR_TRAVEL;
     }
 
     @Override
