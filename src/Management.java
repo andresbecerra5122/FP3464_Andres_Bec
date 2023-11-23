@@ -23,7 +23,13 @@ public class Management {
     // Programmer: name, birthYear, nbProjects, rate
     // Tester: name, birthYear, nbBugs, rate
     void hireTest1() {
-        employees.add(new Manager("Serge", 1985, 30, 4, vt1));
+//        employees.add(new Manager("Serge", 1985, 30, 4, vt1));
+//        employees.add(new Manager("Cindy", 1974, 20, 6, 80));
+//        employees.add(new Programmer("Paul", 1993, 3, 75));
+//        employees.add(new Tester("Pierre", 1987, 124, 50));
+//        employees.add(new Programmer("Matt", 1981, 5, 110));
+//        employees.add(new Programmer("Sarah", 1986, 3));
+        employees.add(new Manager("Serge", 1985, 30, 4));
         employees.add(new Manager("Cindy", 1974, 20, 6, 80));
         employees.add(new Programmer("Paul", 1993, 3, 75));
         employees.add(new Tester("Pierre", 1987, 124, 50));

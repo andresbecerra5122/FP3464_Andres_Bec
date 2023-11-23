@@ -6,7 +6,7 @@ public abstract class Employee {
     private int BirthYear;
 
     private double MontlyIncome;
-
+    private int age;
     private int OccupationRate;
 
     private Vehicle vehicle;
@@ -16,20 +16,20 @@ public abstract class Employee {
     public  abstract double annualincome();
 
 
-    public Employee(String name, int birthYear, int occupationRate) {
+    public Employee(String name, int birthYear) {
         this.Name = name;
         this.BirthYear = birthYear;
-        this.OccupationRate = occupationRate;
+        this.OccupationRate = 100;
         this.MontlyIncome = 100;
+        this.age = 2023 - birthYear;
 
     }
 
     public Employee(String name, int birthYear, int occupationRate, Vehicle vehicle) {
-        this.Name = name;
-        this.BirthYear = birthYear;
-        this.MontlyIncome = 1000;
-        this.OccupationRate = occupationRate;
-        this.vehicle = vehicle;
+        this(name, birthYear);
+        if(OccupationRate < 10){
+            this.OccupationRate = 10;
+        } else this.OccupationRate = Math.min(OccupationRate, 100);
     }
 
     public String getName() {
