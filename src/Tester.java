@@ -6,17 +6,57 @@ public class Tester extends Employee
 
     // Tester: name, birthYear, nbBugs, rate
 
+    public Tester(String name, int birthYear, int noBugs) {
+        super(name, birthYear);
+        System.out.println("We have a new employee  :" + this.getName()+ " , a Tester.");
+        if(IsValidateInputs(noBugs)){
+            this.noBugs = noBugs;
+        }else {
+            throw new IllegalArgumentException("invalid input for number of projects");
+        }
+    }
+
     public Tester(String name, int birthYear, int noBugs, int occupationRate) {
         super(name, birthYear, occupationRate);
         System.out.println("We have a new employee  :" + this.getName()+ " , a Tester.");
-        this.noBugs = noBugs;
+        if(IsValidateInputs(noBugs)){
+            this.noBugs = noBugs;
+        }else {
+            throw new IllegalArgumentException("invalid input for number of projects");
+        }
+    }
+    public Tester(String name, int birthYear, int noBugs, Vehicle vehicle) {
+        super(name, birthYear, vehicle);
+        System.out.println("We have a new employee  :" + this.getName()+ " , a Tester.");
+        if(IsValidateInputs(noBugs)){
+            this.noBugs = noBugs;
+        }else {
+            throw new IllegalArgumentException("invalid input for number of projects");
+        }
     }
 
     public Tester(String name, int birthYear, int noBugs, int occupationRate, Vehicle vehicle) {
         super(name, birthYear, occupationRate, vehicle);
         System.out.println("We have a new employee  :" + this.getName()+ " , a Tester.");
-        this.noBugs = noBugs;
+        if(IsValidateInputs(noBugs)){
+            this.noBugs = noBugs;
+        }else {
+            throw new IllegalArgumentException("invalid input for number of projects");
+        }
     }
+
+    private boolean IsValidateInputs(int noBugs) {
+        return noBugs >= 0;
+    }
+
+    public double getGAIN_FACTOR_ERROR() {
+        return GAIN_FACTOR_ERROR;
+    }
+
+    public void setGAIN_FACTOR_ERROR(double GAIN_FACTOR_ERROR) {
+        this.GAIN_FACTOR_ERROR = GAIN_FACTOR_ERROR;
+    }
+
     public int getNoBugs() {
         return noBugs;
     }
