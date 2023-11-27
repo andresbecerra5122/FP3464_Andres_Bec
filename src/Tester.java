@@ -2,7 +2,7 @@ public class Tester extends Employee
 {
     private int noBugs;
 
-     private double GAIN_FACTOR_ERROR = 10;
+     private final double GAIN_FACTOR_ERROR = 10;
 
     // Tester: name, birthYear, nbBugs, rate
 
@@ -53,9 +53,6 @@ public class Tester extends Employee
         return GAIN_FACTOR_ERROR;
     }
 
-    public void setGAIN_FACTOR_ERROR(double GAIN_FACTOR_ERROR) {
-        this.GAIN_FACTOR_ERROR = GAIN_FACTOR_ERROR;
-    }
 
     public int getNoBugs() {
         return noBugs;

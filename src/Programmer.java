@@ -2,7 +2,7 @@ public class Programmer extends Employee
 {
     private int noProjects;
 
-    private double GAIN_FACTOR_PROJECTS = 200;
+    private final double GAIN_FACTOR_PROJECTS = 200;
 
 
     //Programmer: name, birthYear, nbProjects, rate
