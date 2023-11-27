@@ -77,7 +77,7 @@ public class Programmer extends Employee
 
     @Override
     public String contractInfo() {
-        return this.getName() + " is a Programmer " + getContract().GetContractinfo();
+        return this.getName() + " is a Programmer " + getContract().getContractInfo();
     }
 
     public String toString(){

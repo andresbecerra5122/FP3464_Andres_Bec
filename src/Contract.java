@@ -1,4 +1,4 @@
 public abstract class Contract {
 
-    public abstract String GetContractinfo();
+    public abstract String getContractInfo();
 }

@@ -53,7 +53,7 @@ public class Permanent extends Contract {
         this.moneyPremium = moneyPremium;
     }
 
-    public String GetContractinfo() {
+    public String getContractInfo() {
         String civilStatusStr = civilStatus ? "is married" : "is not married";
         return String.format("He/She %s and has %d children. \nHe/She has worked for %d days, and upon contract, the monthly salary is %.2f\n",
                 civilStatusStr, numberOfChildren, daysWorked, accumulatedSalary(daysWorked));

@@ -77,7 +77,7 @@ public class Tester extends Employee
 
     @Override
     public String contractInfo() {
-        return this.getName() + " is a Tester " + getContract().GetContractinfo();
+        return this.getName() + " is a Tester " + getContract().getContractInfo();
     }
 
     public String toString(){

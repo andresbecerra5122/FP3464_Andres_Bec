@@ -90,7 +90,7 @@ public class Manager extends Employee
 
     @Override
     public String contractInfo() {
-        return this.getName() + " is a Manager " + getContract().GetContractinfo();
+        return this.getName() + " is a Manager " + getContract().getContractInfo();
     }
 
     public String toString(){
