@@ -6,6 +6,7 @@ public class Vehicle {
 
     private VehicleType Category;
 
+    // Constructor to initialize Vehicle with make, plate, color, and category
     public Vehicle(String make, String plate, String color, VehicleType category) {
         this.Make = make;
         this.Plate = plate;
@@ -13,6 +14,7 @@ public class Vehicle {
         this.Category = category;
     }
 
+    // Method to generate a string representation of the Vehicle
     public String toString(){
 
         String Total = "   - Make: " + this.getMake() + "\n";
@@ -22,7 +24,7 @@ public class Vehicle {
         return Total;
     }
 
-
+    //getter and setter methods
     public String getMake() {
         return Make;
     }

@@ -1,36 +1,44 @@
-public class Car extends Vehicle{
+public class Car extends Vehicle {
 
-    private Gear Gear;
-    private CarType Type;
+    // Fields representing the characteristics of a Car
+    private Gear gear;
+    private CarType type;
 
+    // Constructor to initialize the Car object with specific attributes
     public Car(String make, String plate, String color, VehicleType category, Gear gear, CarType type) {
+        // Call the constructor of the superclass (Vehicle) to set common attributes
         super(make, plate, color, category);
-        Gear = gear;
-        Type = type;
+        // Set specific attributes of the Car
+        this.gear = gear;
+        this.type = type;
     }
 
-
+    // Getter and setter methods
     public Gear getGear() {
-        return Gear;
+        return gear;
     }
 
     public void setGear(Gear gear) {
-        Gear = gear;
+        this.gear = gear;
     }
 
+
     public CarType getType() {
-        return Type;
+        return type;
     }
 
     public void setType(CarType type) {
-        Type = type;
+        this.type = type;
     }
 
-    public String toString(){
-        String Total = super.toString();
-        Total = Total + "   -Gear: "+ this.getGear() + "\n";
-        Total = Total + "   -Type: "+ this.getType() + "\n";
-        return  Total;
+    // Override the toString method to provide a custom string representation of the Car
+    @Override
+    public String toString() {
+        // Call the toString method of the superclass (Vehicle) to include common attributes
+        String total = super.toString();
+        // Add Car-specific information to the string representation
+        total = total + "   -Gear: " + this.getGear() + "\n";
+        total = total + "   -Type: " + this.getType() + "\n";
+        return total;
     }
 }
-

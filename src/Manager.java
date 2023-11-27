@@ -9,6 +9,7 @@ public class Manager extends Employee
     private final double GAIN_FACTOR_TRAVEL = 100;
 
 
+    // Constructor for a Manager with basic information, newClients, and travelledDays
     public Manager(String name, int birthYear, int newClients, int travelledDays ) {
         super(name, birthYear);
         if(IsValidateInputs(travelledDays, newClients)){
@@ -20,6 +21,7 @@ public class Manager extends Employee
         System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
     }
 
+    // Constructor for a Manager with basic information, newClients, travelledDays, and occupationRate
     public Manager(String name, int birthYear, int newClients, int travelledDays, int occupationRate){
         super(name, birthYear, occupationRate);
         if(IsValidateInputs(travelledDays, newClients)){
@@ -31,8 +33,7 @@ public class Manager extends Employee
         System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
     }
 
-    // Manager: name, birthYear, nbClients, nbTravelDays, rate
-
+    // Constructor for a Manager with basic information, newClients, travelledDays, and a vehicle
     public Manager(String name, int birthYear, int newClients, int travelledDays, Vehicle vehicle) {
         super(name, birthYear, vehicle);
         if(IsValidateInputs(travelledDays, newClients)){
@@ -43,6 +44,8 @@ public class Manager extends Employee
         }
         System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
     }
+
+    // Constructor for a Manager with basic information, newClients, travelledDays, occupationRate, and a vehicle
     public Manager(String name, int birthYear, int newClients, int travelledDays, int occupationRate, Vehicle vehicle){
         super(name, birthYear, occupationRate, vehicle);
         if(IsValidateInputs(travelledDays, newClients)){
@@ -53,9 +56,13 @@ public class Manager extends Employee
         }
         System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
     }
+
+    // Helper method to validate inputs for newClients and travelledDays
     private boolean IsValidateInputs(int travelledDays, int newClients) {
         return travelledDays >= 0 && newClients >= 0;
     }
+
+    //getter and setter methods
     public int getTravelledDays() {
         return travelledDays;
     }
@@ -80,6 +87,7 @@ public class Manager extends Employee
         return GAIN_FACTOR_TRAVEL;
     }
 
+    // Method to calculate the annual income of the Manager
     @Override
     public double annualincome() {
         double base = getMontlyIncome() * 12;
@@ -88,25 +96,31 @@ public class Manager extends Employee
         return extra + base + extra2 ;
     }
 
+    // Method to provide information about the Manager's contract
     @Override
     public String contractInfo() {
         return this.getName() + " is a Manager " + getContract().getContractInfo();
     }
 
+    // Method to generate a string representation of the Manager
     public String toString(){
 
-        String Total = "Name: " + this.getName()+ ", a Manager \n" +
-                    "Age: " + this.getAge() + "\n";
+        StringBuilder totalBuilder = new StringBuilder();
+        totalBuilder.append("Name: ").append(this.getName()).append(", a Manager \n")
+                .append("Age: ").append(this.getAge()).append("\n");
 
         Vehicle vehicle = this.getVehicle();
-        if(vehicle != null)
-        {
-            Total = Total + vehicle.toString();
+        if (vehicle != null) {
+            totalBuilder.append(vehicle);
         }
-        Total = Total + GetManagerInfo();
-        return Total;
+
+        totalBuilder.append(GetManagerInfo());
+
+        return totalBuilder.toString();
+
     }
 
+    // Helper method to provide additional information about the Manager
     private String GetManagerInfo() {
         return this.getName() + " has an Occupation rate:" + this.getOccupationRate()
                 + "% he/she travelled " + this.getTravelledDays() + " days and has brought "

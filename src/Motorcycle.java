@@ -15,7 +15,7 @@ public class Motorcycle extends  Vehicle{
         SideCar = sideCar;
     }
 
-
+    // Method to generate a string representation of the bike
     public String toString(){
         String Total = super.toString();
         Total = Total + "   -SideCar: "+ this.getSideCar() + "\n";

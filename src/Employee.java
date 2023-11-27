@@ -15,7 +15,7 @@ public abstract class Employee {
 
     public  abstract double annualincome();
 
-
+    // Constructor for initializing basic information of an Employee
     public Employee(String name, int birthYear) {
         this.Name = name;
         this.BirthYear = birthYear;
@@ -24,21 +24,27 @@ public abstract class Employee {
         this.age = 2023 - birthYear;
     }
 
+    // Constructor with occupation rate, ensuring a minimum value
     public Employee(String name, int birthYear, int occupationRate) {
         this(name, birthYear);
         if(occupationRate < 10){
             this.OccupationRate = 10;
         } else this.OccupationRate = Math.min(occupationRate, 100);
     }
+
+    // Constructor with a vehicle
     public Employee(String name, int birthYear, Vehicle vehicle){
         this(name, birthYear);
         this.vehicle = vehicle;
     }
+
+    // Constructor with occupation rate and a vehicle
     public Employee(String name, int birthYear, int occupationRate, Vehicle vehicle){
         this(name, birthYear, occupationRate);
         this.vehicle = vehicle;
     }
 
+    //getter and setter methods
     public String getName() {
         return Name;
     }
@@ -81,12 +87,8 @@ public abstract class Employee {
         this.setContract(p1);
     }
 
-
+    //abstract method for contranctInfo
     public abstract String contractInfo();
-
-
-
-
 
     public Vehicle getVehicle() {
         return vehicle;
@@ -100,6 +102,7 @@ public abstract class Employee {
         return contract;
     }
 
+    //setter method for setContract to change the contract from permanent to temporary and vice versa
     public void setContract(Contract contract) {
         this.contract = contract;
     }
