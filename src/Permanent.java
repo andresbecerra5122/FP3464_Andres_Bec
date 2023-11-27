@@ -59,8 +59,8 @@ public class Permanent extends Contract {
                 civilStatusStr, numberOfChildren, daysWorked, accumulatedSalary(daysWorked));
     }
 
-    private double accumulatedSalary(int daysWorked) {
-        return (daysWorked*(fixMonthSalary + getChildrenBonus()))/20;
+    public double accumulatedSalary(int daysWorked) {
+        return (daysWorked*(fixMonthSalary + getChildrenBonus()))/ Management.workingDaysPerMonth;
     }
 
     private double getChildrenBonus() {
