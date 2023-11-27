@@ -56,11 +56,11 @@ public class Permanent extends Contract {
     public String GetContractinfo() {
         String civilStatusStr = civilStatus ? "is married" : "is not married";
         return String.format("He/She %s and has %d children. \nHe/She has worked for %d days, and upon contract, the monthly salary is %.2f\n",
-                civilStatusStr, numberOfChildren, daysWorked, getRealMonthlySalary());
+                civilStatusStr, numberOfChildren, daysWorked, accumulatedSalary(daysWorked));
     }
 
-    private double getRealMonthlySalary() {
-        return fixMonthSalary + getChildrenBonus();
+    private double accumulatedSalary(int daysWorked) {
+        return (daysWorked*(fixMonthSalary + getChildrenBonus()))/20;
     }
 
     private double getChildrenBonus() {
