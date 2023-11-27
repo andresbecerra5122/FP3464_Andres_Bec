@@ -1,86 +1,69 @@
 public class Permanent extends Contract {
-    private int DaysWorked;
-
-    private double FixMonthSalary;
-
-    private int NumberOfChildren;
-
-    private boolean CivilStatus;
-
-    private double MoneyPremium;
+    private int daysWorked;
+    private double fixMonthSalary;
+    private int numberOfChildren;
+    private boolean civilStatus;
+    private double moneyPremium;
 
     public Permanent(int numberOfChildren, boolean civilStatus, double fixMonthSalary, double moneyPremium, int daysWorked) {
-        this.NumberOfChildren = numberOfChildren;
-        this.CivilStatus = civilStatus;
-        this.DaysWorked = daysWorked;
-        this.FixMonthSalary = fixMonthSalary;
-        this.MoneyPremium = moneyPremium;
+        this.numberOfChildren = numberOfChildren;
+        this.civilStatus = civilStatus;
+        this.daysWorked = daysWorked;
+        this.fixMonthSalary = fixMonthSalary;
+        this.moneyPremium = moneyPremium;
     }
 
     public boolean isCivilStatus() {
-        return CivilStatus;
+        return civilStatus;
     }
 
     public void setCivilStatus(boolean civilStatus) {
-        CivilStatus = civilStatus;
+        this.civilStatus = civilStatus;
     }
 
     public int getNumberOfChildren() {
-        return NumberOfChildren;
+        return numberOfChildren;
     }
 
     public void setNumberOfChildren(int numberOfChildren) {
-        NumberOfChildren = numberOfChildren;
+        this.numberOfChildren = numberOfChildren;
     }
 
     public int getDaysWorked() {
-        return DaysWorked;
+        return daysWorked;
     }
 
     public void setDaysWorked(int daysWorked) {
-        DaysWorked = daysWorked;
+        this.daysWorked = daysWorked;
     }
 
     public double getFixMonthSalary() {
-        return FixMonthSalary;
+        return fixMonthSalary;
     }
 
     public void setFixMonthSalary(double fixMonthSalary) {
-        FixMonthSalary = fixMonthSalary;
+        this.fixMonthSalary = fixMonthSalary;
     }
 
     public double getMoneyPremium() {
-        return MoneyPremium;
+        return moneyPremium;
     }
 
     public void setMoneyPremium(double moneyPremium) {
-        MoneyPremium = moneyPremium;
+        this.moneyPremium = moneyPremium;
     }
 
     public String GetContractinfo() {
-
-        String civilStatus = this.isCivilStatus() ? "is married " : "is not married ";
-        return "he/she " + civilStatus + "and he/she has " + this.getNumberOfChildren() +
-                " children. \n he/she has worked for " + this.getDaysWorked() +
-                " days and upon contract his/her monthly \n salary is " + this.GetRealMonthlySalary() + "\n";
+        String civilStatusStr = civilStatus ? "is married" : "is not married";
+        return String.format("He/She %s and has %d children. \nHe/She has worked for %d days, and upon contract, the monthly salary is %.2f\n",
+                civilStatusStr, numberOfChildren, daysWorked, getRealMonthlySalary());
     }
 
-    private double GetRealMonthlySalary(){
-
-        return this.getFixMonthSalary() + this.getchildrenBonus();
+    private double getRealMonthlySalary() {
+        return fixMonthSalary + getChildrenBonus();
     }
 
-    private double getchildrenBonus() {
-        if(isCivilStatus())
-        {
-            return this.getMoneyPremium() * this.getNumberOfChildren();
-        }
-        else
-        {
-            return 0;
-        }
-
+    private double getChildrenBonus() {
+        return civilStatus ? moneyPremium * numberOfChildren : 0;
     }
-
-
 }
