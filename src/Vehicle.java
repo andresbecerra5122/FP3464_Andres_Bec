@@ -22,6 +22,7 @@ public class Vehicle {
         return Total;
     }
 
+
     public String getMake() {
         return Make;
     }

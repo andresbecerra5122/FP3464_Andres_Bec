@@ -85,7 +85,7 @@ public class Manager extends Employee
         double base = getMontlyIncome() * 12;
         double extra = GAIN_FACTOR_CLIENT *  getNewClients();
         double extra2 = GAIN_FACTOR_TRAVEL * getTravelledDays();
-        return extra + base ;
+        return extra + base + extra2 ;
     }
 
     @Override

@@ -20,7 +20,7 @@ public abstract class Employee {
         this.Name = name;
         this.BirthYear = birthYear;
         this.OccupationRate = 100;
-        this.MontlyIncome = 100;
+        this.MontlyIncome = 1200;
         this.age = 2023 - birthYear;
     }
 

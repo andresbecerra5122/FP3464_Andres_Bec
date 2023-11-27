@@ -1,5 +1,5 @@
 enum VehicleType {
- Sport,
+    Sport,
     Family,
     RACE,
     NOT_FOR_RACE
