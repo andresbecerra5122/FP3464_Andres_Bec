@@ -23,7 +23,7 @@ public class Management {
     // Programmer: name, birthYear, nbProjects, rate
     // Tester: name, birthYear, nbBugs, rate
     void hireTest1() {
-        employees.add(new Manager("Serge", 1985, 30, 4, vt1));
+        employees.add(new Manager("Serge", 1985, 30, 4));
         employees.add(new Manager("Cindy", 1974, 20, 6, 80));
         employees.add(new Programmer("Paul", 1993, 3, 75));
         employees.add(new Tester("Pierre", 1987, 124, 50));
@@ -38,7 +38,7 @@ public class Management {
     void hireTest2() {
         employees.clear();
         employees.add(new Manager("Serge", 1985, 30, 4, vt1));
-        employees.add(new Manager("Cindy", 1974, 20, 6, vt2));
+        employees.add(new Manager("Cindy", 1974, 20, 6, 80, vt2));
         employees.add(new Programmer("Paul", 1993, 3, 75, m1));
         employees.add(new Tester("Pierre", 1987, 124, 50, m2));
         employees.add(new Programmer("Matt", 1981, 5, 110, vt4));
@@ -53,7 +53,7 @@ public class Management {
     void hireTest3() {
         employees.clear();
         Employee Serge = new Manager("Serge", 1985, 30, 4, vt1);
-        Employee Cindy = new Manager("Cindy", 1974, 20, 6, vt2);
+        Employee Cindy = new Manager("Cindy", 1974, 20, 6, 80, vt2);
         Employee Paul = new Programmer("Paul", 1993, 3, 75, m1);
         Employee Pierre = new Tester("Pierre", 1987, 124, 50, m2);
         Employee Matt = new Programmer("Matt", 1981, 5, 110, vt4);

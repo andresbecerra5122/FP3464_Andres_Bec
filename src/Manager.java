@@ -17,6 +17,15 @@ public class Manager extends Employee
 
     }
 
+    public Manager(String name, int birthYear, int newClients, int travelledDays
+                    ) {
+        super(name, birthYear,10);
+        this.travelledDays = travelledDays;
+        this.newClients = newClients;
+
+    }
+
+
     // Manager: name, birthYear, nbClients, nbTravelDays, rate
 
     public Manager(String name, int birthYear, int newClients, int travelledDays, Vehicle vehicle) {
@@ -27,6 +36,13 @@ public class Manager extends Employee
 
 
     }
+
+    public Manager(String name, int birthYear, int newClients, int travelledDays, int occupationrate,Vehicle vehicle) {
+        super(name, birthYear, occupationrate,vehicle);
+        this.travelledDays = travelledDays;
+        this.newClients = newClients;
+    }
+
     public int getTravelledDays() {
         return travelledDays;
     }
