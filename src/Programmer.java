@@ -13,7 +13,6 @@ public class Programmer extends Employee
         }else {
             throw new IllegalArgumentException("invalid input for number of projects");
         }
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
     }
 
     // Constructor for a Programmer with basic information, number of projects, and occupationRate
@@ -24,7 +23,6 @@ public class Programmer extends Employee
         }else {
             throw new IllegalArgumentException("invalid input for number of projects");
         }
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
     }
 
     // Constructor for a Programmer with basic information, number of projects, and a vehicle
@@ -35,7 +33,6 @@ public class Programmer extends Employee
         }else {
             throw new IllegalArgumentException("invalid input for number of projects");
         }
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
     }
 
     // Constructor for a Programmer with basic information, number of projects, occupationRate, and a vehicle
@@ -46,7 +43,6 @@ public class Programmer extends Employee
         }else {
             throw new IllegalArgumentException("invalid input for number of projects");
         }
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
     }
 
     // Helper method to validate the input for the number of projects
@@ -88,17 +84,7 @@ public class Programmer extends Employee
 
     // Method to generate a string representation of the Programmer
     public String toString(){
-
-        String Total = "Name: " + this.getName()+ ", a Programmer \n" +
-                "Age: " + this.getAge() + "\n";
-
-        Vehicle vehicle = this.getVehicle();
-        if(vehicle != null)
-        {
-            Total = Total + vehicle.toString();
-        }
-        Total = Total + GetProgrammerInfo();
-        return Total;
+        return super.toString() + GetProgrammerInfo();
     }
 
     // Helper method to provide additional information about the Programmer

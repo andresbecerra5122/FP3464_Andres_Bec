@@ -7,7 +7,6 @@ public class Tester extends Employee
     // Constructor for a Tester with basic information and number of bugs
     public Tester(String name, int birthYear, int noBugs) {
         super(name, birthYear);
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Tester.");
         if(IsValidateInputs(noBugs)){
             this.noBugs = noBugs;
         }else {
@@ -18,7 +17,6 @@ public class Tester extends Employee
     // Constructor for a Tester with basic information, number of bugs, and occupationRate
     public Tester(String name, int birthYear, int noBugs, int occupationRate) {
         super(name, birthYear, occupationRate);
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Tester.");
         if(IsValidateInputs(noBugs)){
             this.noBugs = noBugs;
         }else {
@@ -29,7 +27,6 @@ public class Tester extends Employee
     // Constructor for a Tester with basic information, number of bugs, and a vehicle
     public Tester(String name, int birthYear, int noBugs, Vehicle vehicle) {
         super(name, birthYear, vehicle);
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Tester.");
         if(IsValidateInputs(noBugs)){
             this.noBugs = noBugs;
         }else {
@@ -40,7 +37,6 @@ public class Tester extends Employee
     // Constructor for a Tester with basic information, number of bugs, occupationRate, and a vehicle
     public Tester(String name, int birthYear, int noBugs, int occupationRate, Vehicle vehicle) {
         super(name, birthYear, occupationRate, vehicle);
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Tester.");
         if(IsValidateInputs(noBugs)){
             this.noBugs = noBugs;
         }else {
@@ -90,17 +86,7 @@ public class Tester extends Employee
 
     // Method to generate a string representation of the Tester
     public String toString(){
-
-        String Total = "Name: " + this.getName()+ ", a Tester \n" +
-                "Age: " + this.getAge() + "\n";
-
-        Vehicle vehicle = this.getVehicle();
-        if(vehicle != null)
-        {
-            Total = Total + vehicle.toString();
-        }
-        Total = Total + GetTesterInfo();
-        return Total;
+        return super.toString() + GetTesterInfo();
     }
 
     // Helper method to provide additional information about the Tester

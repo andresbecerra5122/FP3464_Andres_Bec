@@ -6,7 +6,6 @@ public abstract class Employee {
     private int BirthYear;
 
     private double MontlyIncome;
-    private int age;
     private int OccupationRate;
 
     private Vehicle vehicle;
@@ -21,7 +20,7 @@ public abstract class Employee {
         this.BirthYear = birthYear;
         this.OccupationRate = 100;
         this.MontlyIncome = 1200;
-        this.age = 2023 - birthYear;
+        System.out.println("We have a new employee :" + this.getName()+ " , a " + this.getClass().getName());
     }
 
     // Constructor with occupation rate, ensuring a minimum value
@@ -63,7 +62,6 @@ public abstract class Employee {
 
     public void setBirthYear(int birthYear) {
         BirthYear = birthYear;
-        this.age = 2023 - birthYear;
     }
 
 
@@ -71,14 +69,6 @@ public abstract class Employee {
         return OccupationRate;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-        this.BirthYear = 2023 - age;
-    }
-
-    public void setOccupationRate(int occupationRate) {
-        OccupationRate = occupationRate;
-    }
 
     public int getAge(){
         return Year.now().getValue() - getBirthYear();
@@ -105,5 +95,16 @@ public abstract class Employee {
     //setter method for setContract to change the contract from permanent to temporary and vice versa
     public void setContract(Contract contract) {
         this.contract = contract;
+    }
+    public String toString(){
+        StringBuilder totalBuilder = new StringBuilder();
+        totalBuilder.append( "Name: " ).append(this.getName()).append( " is a" ).append(this.getClass().getName()).append("\n");
+        Vehicle vehicle = this.getVehicle();
+
+        if (vehicle != null) {
+            totalBuilder.append(vehicle);
+        }
+
+        return totalBuilder.toString();
     }
 }

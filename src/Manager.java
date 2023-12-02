@@ -18,7 +18,6 @@ public class Manager extends Employee
         }else {
             throw new IllegalArgumentException("invalid input for travel days or client number");
         }
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
     }
 
     // Constructor for a Manager with basic information, newClients, travelledDays, and occupationRate
@@ -30,7 +29,6 @@ public class Manager extends Employee
         }else {
             throw new IllegalArgumentException("invalid input for travel days or client number");
         }
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
     }
 
     // Constructor for a Manager with basic information, newClients, travelledDays, and a vehicle
@@ -42,7 +40,6 @@ public class Manager extends Employee
         }else {
             throw new IllegalArgumentException("invalid input for travel days or client number");
         }
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
     }
 
     // Constructor for a Manager with basic information, newClients, travelledDays, occupationRate, and a vehicle
@@ -54,7 +51,6 @@ public class Manager extends Employee
         }else {
             throw new IllegalArgumentException("invalid input for travel days or client number");
         }
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
     }
 
     // Helper method to validate inputs for newClients and travelledDays
@@ -103,21 +99,9 @@ public class Manager extends Employee
     }
 
     // Method to generate a string representation of the Manager
+
     public String toString(){
-
-        StringBuilder totalBuilder = new StringBuilder();
-        totalBuilder.append("Name: ").append(this.getName()).append(", a Manager \n")
-                .append("Age: ").append(this.getAge()).append("\n");
-
-        Vehicle vehicle = this.getVehicle();
-        if (vehicle != null) {
-            totalBuilder.append(vehicle);
-        }
-
-        totalBuilder.append(GetManagerInfo());
-
-        return totalBuilder.toString();
-
+        return super.toString() + GetManagerInfo();
     }
 
     // Helper method to provide additional information about the Manager
