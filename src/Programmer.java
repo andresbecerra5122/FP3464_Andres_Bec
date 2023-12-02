@@ -8,26 +8,26 @@ public class Programmer extends Employee
     //Programmer: name, birthYear, nbProjects, rate
     public Programmer(String name, int birthYear, int noProjects) {
         super(name,birthYear,100);
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
+        //System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
         this.noProjects = noProjects;
     }
 
     public Programmer(String name, int birthYear, int noProjects, int occupationRate, Vehicle vehicle) {
         super(name,birthYear,occupationRate,vehicle);
         this.noProjects = noProjects;
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
+        //System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
     }
 
     public Programmer(String name, int birthYear, int noProjects, int occupationRate) {
         super(name,birthYear,occupationRate);
         this.noProjects = noProjects;
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmers.");
+        //System.out.println("We have a new employee  :" + this.getName()+ " , a Programmers.");
     }
 
     public Programmer(String name, int birthYear, int noProjects, Vehicle vehicle) {
         super(name,birthYear,100,vehicle);
         this.noProjects = noProjects;
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
+        //System.out.println("We have a new employee  :" + this.getName()+ " , a Programmer.");
     }
 
     public int getNoProjects() {
@@ -57,14 +57,9 @@ public class Programmer extends Employee
 
     public String toString(){
 
-        String Total = "Name: " + this.getName()+ ", a Programmer \n" +
-                "Age: " + this.getAge() + "\n";
-
-        Vehicle vehicle = this.getVehicle();
-        if(vehicle != null)
-        {
-            Total = Total + vehicle.toString();
-        }
+        //String Total = "Name: " + this.getName()+ ", a Programmer \n" +
+          //      "Age: " + this.getAge() + "\n";
+        String Total = super.toString();
         Total = Total + GetProgrammerInfo();
         return Total;
     }

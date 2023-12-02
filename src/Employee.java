@@ -21,6 +21,7 @@ public abstract class Employee {
         this.BirthYear = birthYear;
         this.OcupationRate = ocupationRate;
         this.MontlyIncome = 100;
+        System.out.println("We have a new employee :" + this.getName()+ " , a " + this.getClass().getName());
 
     }
 
@@ -30,6 +31,8 @@ public abstract class Employee {
         this.MontlyIncome = 1000;
         this.OcupationRate = ocupationRate;
         this.vehicle = vehicle;
+        System.out.println("We have a new employee :" + this.getName()+ " , a " + this.getClass().getName());
+
     }
 
     public String getName() {
@@ -44,9 +47,6 @@ public abstract class Employee {
         return MontlyIncome;
     }
 
-    public void setMontlyIncome(double montlyIncome) {
-        MontlyIncome = montlyIncome;
-    }
 
     public int getOcupationRate() {
         return OcupationRate;
@@ -85,4 +85,17 @@ public abstract class Employee {
     public void setContract(Contract contract) {
         this.contract = contract;
     }
+
+    public String toString(){
+        String Total = "Name: " + this.getName()+ ", a "+ this.getClass().getName() + " \n" +
+                "Age: " + this.getAge() + "\n";
+        Vehicle vehicle = this.getVehicle();
+        if(vehicle != null)
+        {
+            Total = Total + vehicle.toString();
+        }
+
+        return  Total;
+    }
+
 }

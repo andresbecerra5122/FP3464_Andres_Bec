@@ -8,13 +8,13 @@ public class Tester extends Employee
 
     public Tester(String name, int birthYear, int noBugs, int occupationRate) {
         super(name, birthYear, occupationRate);
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Tester.");
+        //System.out.println("We have a new employee  :" + this.getName()+ " , a Tester.");
         this.noBugs = noBugs;
     }
 
     public Tester(String name, int birthYear, int noBugs, int occupationRate, Vehicle vehicle) {
         super(name, birthYear, occupationRate, vehicle);
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Tester.");
+        //System.out.println("We have a new employee  :" + this.getName()+ " , a Tester.");
         this.noBugs = noBugs;
     }
     public int getNoBugs() {
@@ -45,14 +45,7 @@ public class Tester extends Employee
 
     public String toString(){
 
-        String Total = "Name: " + this.getName()+ ", a Tester \n" +
-                "Age: " + this.getAge() + "\n";
-
-        Vehicle vehicle = this.getVehicle();
-        if(vehicle != null)
-        {
-            Total = Total + vehicle.toString();
-        }
+        String Total = super.toString();
         Total = Total + GetTesterInfo();
         return Total;
     }

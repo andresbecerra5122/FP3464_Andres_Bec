@@ -14,7 +14,7 @@ public class Manager extends Employee
         super(name, birthYear,occupationRate);
         this.travelledDays = travelledDays;
         this.newClients = newClients;
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
+
     }
 
     // Manager: name, birthYear, nbClients, nbTravelDays, rate
@@ -23,7 +23,7 @@ public class Manager extends Employee
         super(name, birthYear, 10,vehicle);
         this.travelledDays = travelledDays;
         this.newClients = newClients;
-        System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
+        //System.out.println("We have a new employee  :" + this.getName()+ " , a Manager.");
 
 
     }
@@ -57,15 +57,7 @@ public class Manager extends Employee
     }
 
     public String toString(){
-
-        String Total = "Name: " + this.getName()+ ", a Manager \n" +
-                    "Age: " + this.getAge() + "\n";
-
-        Vehicle vehicle = this.getVehicle();
-        if(vehicle != null)
-        {
-            Total = Total + vehicle.toString();
-        }
+        String Total = super.toString();
         Total = Total + GetManagerInfo();
         return Total;
     }
